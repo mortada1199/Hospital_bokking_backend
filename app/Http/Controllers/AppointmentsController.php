@@ -27,8 +27,22 @@ class AppointmentsController extends Controller
     }
 
 
+//update a appointment
+    public function update(AppoimentRequest $request, $id)
+    {
+        //find the appointment
+        $appointment = Appointments::find($id);
+
+        //update the appointment
+        $appointment->update($request->all());
+
+        //send a success message
+        return response()->json([
+           'message' => 'Appointment updated successfully!',
+            'appointment' => $appointment
+        ], 200);
+    }
 
 
 
-    
 }
