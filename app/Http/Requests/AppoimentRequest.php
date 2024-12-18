@@ -16,6 +16,7 @@ class AppoimentRequest extends FormRequest
         return [
             'comments' => 'required',
             'date' => 'required',
+            'patient_id'=>'required'
         ];
     }
 }
