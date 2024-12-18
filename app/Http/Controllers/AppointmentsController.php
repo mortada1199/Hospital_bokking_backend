@@ -28,7 +28,7 @@ class AppointmentsController extends Controller
     }
 
 
-//update a appointment
+    //update a appointment
     public function update(UpdateAppoimentRequest $request, $id)
     {
         //find the appointment
@@ -39,7 +39,7 @@ class AppointmentsController extends Controller
 
         //send a success message
         return response()->json([
-           'message' => 'Appointment updated successfully!',
+            'message' => 'Appointment updated successfully!',
             'appointment' => $appointment
         ], 200);
     }
@@ -49,12 +49,11 @@ class AppointmentsController extends Controller
         $appointment = Appointments::all();
         $patient = $appointment->patient;
 
-           
+
         dd($patient);
 
         return response()->json([
             'appointments' => $patient
         ], 200);
     }
-
 }
