@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\AppoimentRequest;
+use App\Http\Requests\UpdateAppoimentRequest;
 use App\Models\Appointments;
 use Illuminate\Http\Request;
 
@@ -28,7 +29,7 @@ class AppointmentsController extends Controller
 
 
 //update a appointment
-    public function update(AppoimentRequest $request, $id)
+    public function update(UpdateAppoimentRequest $request, $id)
     {
         //find the appointment
         $appointment = Appointments::find($id);
