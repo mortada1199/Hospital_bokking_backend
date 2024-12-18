@@ -44,6 +44,17 @@ class AppointmentsController extends Controller
         ], 200);
     }
 
+    public function index()
+    {
+        $appointment = Appointments::all();
+        $patient = $appointment->patient;
 
+           
+        dd($patient);
+
+        return response()->json([
+            'appointments' => $patient
+        ], 200);
+    }
 
 }
