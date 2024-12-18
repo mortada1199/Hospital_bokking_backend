@@ -46,14 +46,16 @@ class AppointmentsController extends Controller
 
     public function index()
     {
-        $appointment = Appointments::all();
-        $patient = $appointment->patient;
+        $appointments = Appointments::with('patient')->get();
 
-
-        dd($patient);
-
-        return response()->json([
-            'appointments' => $patient
-        ], 200);
+        if ($appointments) {
+            return response()->json([
+                'appointment' => $appointments
+            ], 200);
+        } else {
+            return response()->json([
+                'error' => 'No appointments found'
+            ], 404);
+        }
     }
 }
