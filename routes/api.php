@@ -44,5 +44,5 @@ Route::middleware('auth:sanctum')->group(function () { //scantoum  library
     //appointment
     Route::post('/AddAppointment', [AppointmentsController::class, 'store']); //add appointment
     Route::get('/GetAppointment/{id}', [AppointmentsController::class, 'GetAppointment']); //Get appointment
-    Route::put('/UpdateAppointment/{id}', [AppointmentsController::class, 'UpdateAppointment']); //update appointment
+    Route::put('/UpdateAppointment/{id}', [AppointmentsController::class, 'update']); //update appointment
 });
