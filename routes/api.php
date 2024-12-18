@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AppointmentsController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\PatientController;
@@ -39,4 +40,9 @@ Route::middleware('auth:sanctum')->group(function () { //scantoum  library
     Route::get('/GetPatient', [PatientController::class, 'GetPatient']); //Get Patient
     Route::put('/ActiveStatus/{id}', [PatientController::class, 'ActiveStatus']); //ActiveStatus Special
     Route::put('/InActiveStatus/{id}', [PatientController::class, 'InActiveStatus']); //ActiveStatus Special
+
+    //appointment
+    Route::post('/AddAppointment', [AppointmentsController::class, 'store']); //add appointment
+    Route::get('/GetAppointment/{id}', [AppointmentsController::class, 'GetAppointment']); //Get appointment
+    Route::put('/UpdateAppointment/{id}', [AppointmentsController::class, 'UpdateAppointment']); //update appointment
 });
