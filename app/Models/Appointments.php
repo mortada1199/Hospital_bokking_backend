@@ -12,7 +12,7 @@ class Appointments extends Model
     protected $fillable = ['patient_id','date', 'comments'];
 
 
-    public function user()
+    public function patient()
     {
         return $this->belongsTo(Patient::class);
     }
